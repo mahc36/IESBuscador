@@ -1,5 +1,9 @@
 package dao.secuencia;
 
-public interface ISecuenciaDao {
+import java.sql.Connection;
 
+public interface ISecuenciaDao {
+	
+	public Integer getConsecutive(String nameOfSequence,Connection con) throws Exception;
+	
 }

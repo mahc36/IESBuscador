@@ -19,9 +19,7 @@ public class PersistUtil {
 	public static DataSource getDataSource(){  	
     	try {
 			InitialContext ic = new InitialContext();
-			System.out.println("Ya casi va a conectar");
-			dataSource = (DataSource) ic.lookup("java:/IESBuscador");
-			System.out.println("Acá debió haber conectado");
+			dataSource = (DataSource) ic.lookup("java:/IESBuscadorDS");
 		} catch (Exception e) {
 			e.toString();
 		}

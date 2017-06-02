@@ -13,7 +13,6 @@ public class PersonDao implements IPersonDao {
 
 	@Override
 	public String addPerson(PersonDTO person, Connection con) throws Exception {
-		System.out.println("maybe the code can come here");
 		String message ="";
 		String query;
         PreparedStatement instruction = null;
@@ -37,9 +36,7 @@ public class PersonDao implements IPersonDao {
 		}
         finally {
             PersistUtil.closeResources(instruction);
-         }
-        
+         } 
         return message;
 	}
-
 }

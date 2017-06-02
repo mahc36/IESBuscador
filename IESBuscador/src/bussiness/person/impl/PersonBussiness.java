@@ -21,7 +21,6 @@ public class PersonBussiness implements IPersonBussiness {
 	
 	@Override
 	public String addPerson(PersonDTO person) {
-		System.out.println("Lo que ha llegado es esto: "+person.getName()+" "+person.getPassword());
 		Connection con = null;
 		String message="";
 		try {

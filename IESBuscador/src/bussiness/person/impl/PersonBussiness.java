@@ -33,4 +33,21 @@ public class PersonBussiness implements IPersonBussiness {
 		}
 		return message;
 	}
+
+	@Override
+	public boolean checkEmail(String email) {
+		Connection con = null;
+		boolean result = false;
+		try {
+			con = dataSource.getConnection();
+			result=personDAO.checkEmail(email, con);
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		} finally {
+			PersistUtil.closeConnection(con);
+		}
+		return result;
+	}
+	
+	
 }

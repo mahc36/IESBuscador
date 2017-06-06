@@ -62,7 +62,7 @@ public class PersonDao implements IPersonDao {
         	instruction.setString(index, email);
         	resultset =instruction.executeQuery();
 			if(resultset.next()) {
-				result =true;
+				result=true;
 			}
 		} catch (Exception sql) {
         	con.rollback();
@@ -73,4 +73,34 @@ public class PersonDao implements IPersonDao {
          } 
         return result;
 	}
+
+	@Override
+	public PersonDTO findByEmail(String email, Connection con) throws Exception {
+		PersonDTO personDTO = new PersonDTO();
+		String query;
+		ResultSet resultSet = null;
+		PreparedStatement instruction = null;
+		try {
+			query = PersonSql.FINDBYID;
+			instruction = con.prepareStatement(query);
+			int index=1;
+			instruction.setString(index, email);
+			resultSet = instruction.executeQuery();
+			if(resultSet.next()){
+				personDTO.setId(resultSet.getInt("per_id"));
+				personDTO.setName(resultSet.getString("per_name"));
+				personDTO.setEmail(resultSet.getString("per_email"));
+				personDTO.setPassword(resultSet.getString("per_password"));
+			}
+		} catch (Exception sql) {
+			con.rollback();
+            throw new Exception(sql.toString());
+		}
+		finally {
+			PersistUtil.closeResources(instruction);
+		}
+		return personDTO;
+	}
+	
+	
 }

@@ -1,6 +1,9 @@
 package bussiness.person.impl;
 import java.sql.Connection;
+import javax.servlet.jsp.tagext.TryCatchFinally;
+
 import javax.sql.DataSource;
+
 import bussiness.person.IPersonBussiness;
 import dao.person.IPersonDao;
 import dao.person.jdbc.PersonDao;
@@ -31,4 +34,37 @@ public class PersonBussiness implements IPersonBussiness {
 		}
 		return message;
 	}
+
+	@Override
+	public boolean checkEmail(String email) {
+		Connection con = null;
+		boolean result = false;
+		try {
+			con = dataSource.getConnection();
+			result=personDAO.checkEmail(email, con);
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		} finally {
+			PersistUtil.closeConnection(con);
+		}
+		return result;
+	}
+
+	@Override
+	public PersonDTO findByEmail(String email) {
+		Connection con = null;
+		PersonDTO personResult = new PersonDTO();
+		try {
+			con=dataSource.getConnection();
+			personResult = personDAO.findByEmail(email,con);
+		} catch (Exception e) {
+			System.out.println(e.toString());
+		}
+		finally {
+			PersistUtil.closeConnection(con);
+		}
+		return personResult;
+	}
+	
+	
 }

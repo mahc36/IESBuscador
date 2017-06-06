@@ -1,150 +1,135 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Instituciones Educativas</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+<title>Instituciones Educativas</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="../js/extensions/jquery.min.js"></script>
+<script type="text/javascript" src="../js/extensions/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/extensions/angular.min.js"></script>
+<script type="text/javascript" src="../js/app.js"></script>
+<script type="text/javascript" src="../js/controller/iesCtlr.js"></script>
+<script type="text/javascript" src="../js/service/iesService.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/hover.css">
+<link rel="stylesheet" type="text/css"
+	href="../js/extensions/bootstrap.min.css">
 </head>
-  <body class="bodie-home">    
-    	<nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle  ºcollapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">IESBuscador</a>
-          </div>
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">              
-              <li class="active pull-left"><a href="../index.html">Home</a></li>
-              <li class="pull-left"><a href="#">IES</a></li>
-              <li class="pull-left"><a href="knowledgeareas.html">Programas</a></li>
-              <li class="pull-left"><a href="#">Acerca de Nosotros</a></li>
-              <li class="pull-right"><a href="register.html">Registar</a></li>
-              <li class="pull-right"><a href="login.html">Iniciar Sesión</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>    
-  <div>
-    <div align="center">
-        <img src="../img/imguniversidades.jpg" alt="University" style="width:95%;height:228px; border-left: 30px !important;">
-    </div>
-  </div>
-  <div>
-    <ul class="breadcrumb">
-      <li><a href="../index.html">Home</a></li>
-      <li>Universidades</li>
-    </ul>
-  </div>
-  <div>
-    <h1 style="margin-left: 70px;margin-top: 50px;">Instituciones de Educacion Superior</h1>
-  </div>
-  
-  <div class="row" style="margin-left: 15px;margin-right: 15px;margin-top: 30px;">
-    <div class="col-sm-4 col-md-3">
-      <div class="thumbnail">        
-        <div class="caption">
-          <h3 style="height:70px">Filtro</h3>
-          <h4>Caracter:</h4>
-          <form>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">IES Publicas</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">IES Privadas</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">IES Mixtas</label>
-            </div>
-          </form> <br>
-          <h4>Ubicacion:</h4>
-          <form>
-            <select class="form-control" id="sel1">
-              <option>Seleccione...</option>
-              <option>Medellin</option>
-              <option>Rionegro</option>
-              <option>Turbo</option>
-              <option>El Carmen</option>
-            </select>
-          </form> <br>
-          <h4>Acreditacion:</h4>
-          <form>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">IES Acreditadas</label>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" value="">IES No acreditadas</label>
-            </div>
-          </form>         
-        </div>
-      </div>
-    </div>    
-    <div class="col-sm-6 col-md-8">
-      <div  class="container buscador col-sm-12 col-md-12">
-        <form>
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-            <div class="input-group-btn">
-              <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
-          </div>
-        </form>
-        <h5>Resultados para: ---------------</h5>
-      </div>
-      <div class="col-sm-12 col-md-4" style="margin-top: 30px;">
-        <div class="thumbnail">
-          <img style="height:200px;" src="../img/uco.png" alt="...">
-          <div class="caption">
-            <h3 style="height:70px">Universidad Catolica de Oriente</h3>
-            <p style="height:40px">"A la verdad por la fe y la ciencia"</p>
-            <p><a href="universitydetails.html" class="btn btn-primary" role="button">Visitar</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-4" style="margin-top: 30px;">
-        <div class="thumbnail" >
-          <img style="height:200px;" src="../img/eafit.png" alt="...">
-          <div class="caption">
-            <h3 style="height:70px">Universidad EAFIT</h3>
-            <p style="height:40px">"Abierta al mundo"</p>
-            <p><a href="universitydetails.html" class="btn btn-primary" role="button">Visitar</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-4" style="margin-top: 30px;">
-        <div class="thumbnail">
-          <img style="height:200px;" src="../img/udea.png" alt="...">
-          <div class="caption">
-            <h3 style="height:70px">Universidad de Antioquia</h3>
-            <p style="height:40px">"Alma mater de Antioquia"</p>
-            <p><a href="universitydetails.html" class="btn btn-primary" role="button">Visitar</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-12 col-md-4" style="margin-top: 30px;">
-        <div class="thumbnail">
-          <img style="height:200px;" src="../img/unal.png" alt="...">
-          <div class="caption">
-            <h3 style="height:70px">Universidad Nacional</h3>
-            <p style="height:40px">"......"</p>
-            <p><a href="universitydetails.html" class="btn btn-primary" role="button">Visitar</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>  
-      <footer class="footer" style="background-color:#000000;">
-      <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
-      </div>
-    </footer>
-  </body>
+<body class="bodie-home">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle  ºcollapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">IESBuscador</a>
+			</div>
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active pull-left"><a href="../index.html">Home</a></li>
+					<li class="pull-left"><a href="#">IES</a></li>
+					<li class="pull-left"><a href="knowledgeareas.html">Programas</a></li>
+					<li class="pull-left"><a href="#">Acerca de Nosotros</a></li>
+					<li class="pull-right"><a href="register.html">Registar</a></li>
+					<li class="pull-right"><a href="login.html">Iniciar Sesión</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div>
+		<div align="center">
+			<img src="../img/imguniversidades.jpg" alt="University"
+				style="width: 95%; height: 228px; border-left: 30px !important;">
+		</div>
+	</div>
+	<div>
+		<ul class="breadcrumb">
+			<li><a href="../index.html">Home</a></li>
+			<li>Universidades</li>
+		</ul>
+	</div>
+	<div>
+		<h1 style="margin-left: 70px; margin-top: 50px;">Instituciones de
+			Educacion Superior</h1>
+	</div>
+
+	<div data-ng-app="app" data-ng-controller="iesCtlr" class="row"	data-ng-init="getList()"
+		style="margin-left: 15px; margin-right: 15px; margin-top: 30px;">
+		<div class="col-sm-4 col-md-3">
+			<div class="thumbnail">
+				<div data-ng-click="" class="caption">
+					<h3 style="height: 70px">Filtro</h3>
+					<h4>Caracter:</h4>
+					<form>
+						<div class="checkbox">
+							<label><input type="checkbox" data-ng-model="publ">Publicas</label>
+						</div>
+						<div class="checkbox">
+							<label><input type="checkbox" data-ng-model="priv">Privadas</label>
+						</div>
+					</form>
+					<br>
+					<h4>Con sede en:</h4>
+					<form>
+						<select data-ng-model="city" class="form-control" id="sel1">							
+							<option>Medellin</option>
+							<option>Rionegro</option>
+							<option>Turbo</option>
+							<option>El Carmen</option>
+						</select>
+					</form>
+					<br>
+					<h4>Acreditacion:</h4>
+					<form>
+						<div class="checkbox">
+							<label><input type="checkbox" data-ng-model="acred">Acreditadas</label>
+						</div>
+						<div class="checkbox">
+							<label><input type="checkbox" data-ng-model="noacred">No acreditadas</label>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 col-md-8">
+			<div class="container buscador col-sm-12 col-md-12">
+				<form>
+					<div class="input-group">
+						<input required="required" data-ng-model="nameSearch" type="text" class="form-control" placeholder="Search">
+						<div class="input-group-btn">
+							<button data-ng-click="findIES(nameSearch)" class="btn btn-default" type="submit">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+				</form>
+				<h5>Resultados para: {{answer}}</h5>
+			</div>
+			<div data-ng-show="Ies.length != 0" data-ng-repeat="item in Ies " class="col-sm-12 col-md-4"
+				style="margin-top: 30px;">
+				<div  class="thumbnail">
+					<img style="height: 200px;" data-ng-src="{{item.escudo}}" alt="...">
+					<div  class="caption">
+						<h3 style="height: 70px">{{item.name}}</h3>
+						<p style="height: 40px">{{item.slogan}}</p>
+						<p>
+							<label data-ng-model="id" hidden="true">{{item.id}}</label> <a
+								href="universitydetails.html" class="btn btn-primary"
+								role="button">Visitar</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer" style="background-color: #000000;">
+		<div class="container">
+			<p class="text-muted">Place sticky footer content here.</p>
+		</div>
+	</footer>
+</body>
 </html>

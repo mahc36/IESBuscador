@@ -1,4 +1,4 @@
-var app = angular.module("app", ["ngCookies"]);
+var app = angular.module("app", ["ngRoute"]);
 //app.config(function($routeProvider){
 //	$routeProvider
 //	.when("/",{

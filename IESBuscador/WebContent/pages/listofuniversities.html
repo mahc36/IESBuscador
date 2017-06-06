@@ -4,14 +4,14 @@
 <title>Instituciones Educativas</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="text/javascript" src="../js/extensions/jquery.min.js"></script>
-<script type="text/javascript" src="../js/extensions/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/extensions/angular.min.js"></script>
-<script type="text/javascript" src="../js/app.js"></script>
-<script type="text/javascript" src="../js/controller/iesCtlr.js"></script>
-<script type="text/javascript" src="../js/service/iesService.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/hover.css">
-<link rel="stylesheet" type="text/css" href="../js/extensions/bootstrap.min.css">
+	
+	<script type="text/javascript" src="../js/extensions/angular.min.js"></script>
+	<script src="../js/extensions/angular-route.js" type="text/javascript"></script>
+	<script type="text/javascript" src="../js/app.js"></script>
+	<script type="text/javascript" src="../js/controller/iesCtlr.js"></script>
+	<script type="text/javascript" src="../js/service/iesService.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/hover.css">
+	<link rel="stylesheet" type="text/css" href="../js/extensions/bootstrap.min.css">
 </head>
 <body class="bodie-home">
 	<nav class="navbar navbar-inverse">
@@ -75,6 +75,7 @@
 					<h4>Con sede en:</h4>
 					<form>
 						<select data-ng-model="city" class="form-control" id="sel1">							
+							<option>Seleccione...</option>
 							<option>Medellin</option>
 							<option>Rionegro</option>
 							<option>Turbo</option>

@@ -40,16 +40,12 @@ public class ProgramDao implements IProgramDao {
 		List<ProgramsFilterDTO> programsList = new ArrayList<>();
 		try {
 			query = ProgramSql.FILTER;
-			System.out.println(query);
 			instruction = con.prepareStatement(query);
 			result = instruction.executeQuery();
 			while (result.next()) {
 				programsFilterDTO = new ProgramsFilterDTO();
 				setInfoProgram(result, programsFilterDTO);
 				programsList.add(programsFilterDTO);
-			}
-			for (ProgramsFilterDTO programsFilterDTO2 : programsList) {
-				System.out.println(programsFilterDTO2.getIesName());
 			}
 		} catch (SQLException sql) {
 			System.out.println(sql.toString());

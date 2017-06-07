@@ -13,4 +13,6 @@ public interface IIesBussiness {
 
 	List<IesDTO> findIES(String name);
 
+	IesDTO getInfo(int iesid);
+
 }

@@ -5,16 +5,16 @@
 	<title>Home</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="js/extensions/angular.min.js" ></script>
+	<script type="text/javascript" src="js/extensions/angular-route.js"></script>
+	<script type="text/javascript" src="js/extensions/angular-cookies.js"></script>
+	<script type="text/javascript" src="js/extensions/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="js/extensions/jquery.min.js"></script>
+	<script type="text/javascript" src="js/extensions/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css"	href="js/extensions/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/hover.css">
-	<script src="../js/extensions/angular.min.js" type="text/javascript" ></script>
-	<script type="text/javascript" src="../js/extensions/angular-route.js"></script>
-	<script type="text/javascript" src="../js/extensions/angular-cookies.js"></script>
-	<script type="text/javascript" src="js/extensions/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/extensions/function.js"></script>
-	<script type="text/javascript" src="js/extensions/jquery-3.2.0.min.js"></script>
-	<script type="text/javascript" src="js/extensions/jquery.min.js"></script>
 	<script type="text/javascript" src="js/extensions/w3data.js"></script>
 </head>
 
@@ -38,15 +38,14 @@
 					<li class="pull-left"><a href="pages/listofuniversities.html">IES</a></li>
 					<li class="pull-left"><a href="pages/knowledgeareas.html">Programas</a></li>
 					<li class="pull-left"><a href="#">Acerca de Nosotros</a></li>
+					<li class="pull-left" data-ng-app="app" data-ng-controller="personCtrl" data-ng-click="logOut()"><a href="#">Cerrar Sesión</a></li>
 					<li class="pull-right"><a href="pages/register.html">Registar</a></li>
 					<li class="pull-right"><a href="pages/login.html">Iniciar Sesión</a></li>	
 				</ul>
 			</div>
 		</div>
 	</nav>
-	
-	<input type="button" data-ng-app="app" data-ng-controller="personCtrl" data-ng-click="logOut()" data-ng-hide="checkCookie()" value="cerrar Sesión">
-	
+	<input type="button" data-ng-app="app" data-ng-controller="personCtrl" data-ng-click="logOut()" value="cerrar Sesión">
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
 		<ol class="carousel-indicators">

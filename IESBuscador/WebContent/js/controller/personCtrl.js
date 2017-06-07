@@ -38,7 +38,7 @@ app.controller("personCtrl", ["$scope","personService","$cookieStore", function 
 	}
 	
 	$scope.logOut=function(){
-		alert("Le dio al boton de cerrar sesión");
+		alert("vamos a cerrar la sesión");
 		var getCookie = $cookieStore.get('cookiePersonSession');
 		alert("get cookie: "+getCookie);
 		if(!angular.isUndefined(getCookie)){
@@ -46,7 +46,6 @@ app.controller("personCtrl", ["$scope","personService","$cookieStore", function 
 			$cookieStore.remove('cookiePersonSession');
 		}
 	}
-		
 		
 	$scope.checkCookie=function(){
 //		var getCookie = $cookieStore.get('cookiePersonSession');
@@ -61,7 +60,6 @@ app.controller("personCtrl", ["$scope","personService","$cookieStore", function 
 //		}
 //		alert("contador "+contador);
 //		contador=contador+1;
-		
 	}
 	
 	//Login

@@ -13,14 +13,14 @@ app.controller("iesCtlr",  ["$scope",  "iesService", function iesCtlr($scope, ie
 	$scope.findIES=function(nameSearch){		
 		if(nameSearch == null){
 			alert("Debe indicar el nombre de la IES a buscar");
-		}
+		}	
 		else{
-			$scope.Ies={};		
 			iesService.findIES(nameSearch).then(function(message){
-				$scope.answer=nameSearch;
-				$scope.Ies=message.data;
-				if($scope.Ies === {}){
+				if(message.data.length == 0){
 					alert("No hay ninguna IES con este nombre");
+				}else{
+					$scope.answer=nameSearch;
+					$scope.Ies=message.data;
 				}
 			});
 		}

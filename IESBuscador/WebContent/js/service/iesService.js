@@ -9,7 +9,7 @@ app.factory("iesService", function($q, $http) {
 			});
 		},
 		findIES: function(nameSearch){				
-			return $http.post('http://localhost:8080/IESBuscador/rest/iesServices/findIES',nameSearch).then(function(data){
+			return $http.get('http://localhost:8080/IESBuscador/rest/iesServices/findIES/'+nameSearch).then(function(data){
 				var received=angular.fromJson(data);
 				return received;
 			}).catch(function(data){

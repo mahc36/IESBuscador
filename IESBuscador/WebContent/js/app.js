@@ -1,4 +1,5 @@
-var app = angular.module("app", ["ngRoute","ngCookies"]);
+var app = angular.module('app', ['ngCookies']);
+
 //app.config(function($routeProvider){
 //	$routeProvider
 //	.when("/",{
@@ -8,3 +9,17 @@ var app = angular.module("app", ["ngRoute","ngCookies"]);
 //		templateUrl:"/resources/partials/page1.html"
 //	});
 //});
+
+//(function() {
+//    "use strict";
+//
+//     var app = angular.module('app', ['ngCookies']);
+////    app.config(function ($routeProvider) {
+////        $routeProvider
+////         .when('sample', {
+////            templateUrl: 'views/sample.html',
+////            controller: 'sampleCtrl'
+////          })
+////     });
+//
+//  })();

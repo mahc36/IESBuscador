@@ -29,7 +29,7 @@ app.controller("iesCtlr",  ["$scope","$window", "iesService",function iesCtlr($s
 	$scope.visitSite= function(iesid){		
 		$window.location.href = 'universitydetails.html';		
 	}
-	={};
+	//={};
 	$scope.getInfo=function(){
 		iesService.getInfo(iesid).then(function(message){
 			$scope.iesdata=message.data;

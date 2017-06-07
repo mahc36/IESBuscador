@@ -13,27 +13,30 @@ import dto.IesDTO;
 import util.PersistUtil;
 
 public class IesDao implements IIesDao {
-	private void setInfoIes(ResultSet result, IesDTO iesDTO) throws Exception {
-		iesDTO.setId(result.getInt("ies_id"));
-		iesDTO.setName(result.getString("ies_name"));
-		iesDTO.setSlogan(result.getString("ies_slogan"));
-		iesDTO.setEscudo(result.getString("ies_escudo"));
+	private void setInfoIes(ResultSet result, Filter filter) throws Exception {
+		filter.setId(result.getInt("ies_id"));
+		filter.setName(result.getString("ies_name"));
+		filter.setSlogan(result.getString("ies_slogan"));
+		filter.setEscudo(result.getString("ies_escudo"));
+		filter.setAccreditation(result.getBoolean("ies_accreditation"));
+		filter.setCaracter(result.getString("ies_caracter"));
+		filter.setCity(result.getString("cam_city"));
 	}
 	@Override
-	public List<IesDTO> getIes(Connection con) throws Exception {
+	public List<Filter> getIes(Connection con) throws Exception {
 		PreparedStatement instruction=null;
 		ResultSet result=null;
 		String query;
-		IesDTO iesDTO= null;
-		List<IesDTO> listOfIes=new ArrayList<>();
+		Filter filter = null;
+		List<Filter> listOfIes=new ArrayList<>();
 		try{
 			query= IesSql.GET_LIST_IES;
 			instruction=con.prepareStatement(query);
 			result=instruction.executeQuery();
 			while(result.next()){
-				iesDTO=new IesDTO();
-				setInfoIes(result, iesDTO);
-				listOfIes.add(iesDTO);
+				filter = new Filter();
+				setInfoIes(result, filter);
+				listOfIes.add(filter);
 			}
 		}finally{
 			PersistUtil.closeResources(instruction, result);
@@ -46,27 +49,27 @@ public class IesDao implements IIesDao {
 		String query;
 		IesDTO iesDTO= null;
 		List<IesDTO> listOfIes=new ArrayList<>();
-		try {
-			query = IesSql.GET_LIST_BY_FILTER;
-			instruction = con.prepareStatement(query);
-			int index = 1;
-			instruction.setString(index++, filter.getCity());
-			String caracter="";
-			if(filter.isPubl())
-				caracter="publica";
-			else
-				caracter="privada";
-			instruction.setString(index++,caracter);
-			instruction.setBoolean(index++, filter.isAcred());
-			result = instruction.executeQuery();
-			while (result.next()) {
-				iesDTO = new IesDTO();
-				setInfoIes(result, iesDTO);
-				listOfIes.add(iesDTO);
-			}
-		} finally {
-			PersistUtil.closeResources(instruction, result);
-		}
+//		try {
+//			query = IesSql.GET_LIST_BY_FILTER;
+//			instruction = con.prepareStatement(query);
+//			int index = 1;
+//			instruction.setString(index++, filter.getCity());
+//			String caracter="";
+//			if(filter.isPubl())
+//				caracter="publica";
+//			else
+//				caracter="privada";
+//			instruction.setString(index++,caracter);
+//			instruction.setBoolean(index++, filter.isAcred());
+//			result = instruction.executeQuery();
+//			while (result.next()) {
+//				iesDTO = new IesDTO();
+//				setInfoIes(result, iesDTO);
+//				listOfIes.add(iesDTO);
+//			}
+//		} finally {
+//			PersistUtil.closeResources(instruction, result);
+//		}
 		return listOfIes;
 	}
 	@Override
@@ -76,20 +79,20 @@ public class IesDao implements IIesDao {
 		String query;
 		IesDTO iesDTO= null;
 		List<IesDTO> listOfIes=new ArrayList<>();
-		try {
-			query = IesSql.GET_LIST_BY_NAME;
-			instruction = con.prepareStatement(query);
-			int index = 1;
-			instruction.setString(index++, name);			
-			result = instruction.executeQuery();
-			while (result.next()) {
-				iesDTO = new IesDTO();
-				setInfoIes(result, iesDTO);
-				listOfIes.add(iesDTO);
-			}
-		} finally {
-			PersistUtil.closeResources(instruction, result);
-		}
+//		try {
+//			query = IesSql.GET_LIST_BY_NAME;
+//			instruction = con.prepareStatement(query);
+//			int index = 1;
+//			instruction.setString(index++, name);			
+//			result = instruction.executeQuery();
+//			while (result.next()) {
+//				iesDTO = new IesDTO();
+//				setInfoIes(result, iesDTO);
+//				listOfIes.add(iesDTO);
+//			}
+//		} finally {
+//			PersistUtil.closeResources(instruction, result);
+//		}
 		return listOfIes;		
 	}
 	@Override
@@ -98,19 +101,19 @@ public class IesDao implements IIesDao {
 		ResultSet result=null;
 		String query;
 		IesDTO iesDTO= null;		
-		try{
-			query= IesSql.GET_IES_INFO;
-			instruction=con.prepareStatement(query);
-			int index = 1;
-			instruction.setInt(index++,iesid);
-			result=instruction.executeQuery();
-			while(result.next()){
-				iesDTO=new IesDTO();
-				setInfoIes(result, iesDTO);				
-			}
-		}finally{
-			PersistUtil.closeResources(instruction, result);
-		}
+//		try{
+//			query= IesSql.GET_IES_INFO;
+//			instruction=con.prepareStatement(query);
+//			int index = 1;
+//			instruction.setInt(index++,iesid);
+//			result=instruction.executeQuery();
+//			while(result.next()){
+//				iesDTO=new IesDTO();
+//				setInfoIes(result, iesDTO);				
+//			}
+//		}finally{
+//			PersistUtil.closeResources(instruction, result);
+//		}
 		return iesDTO;
 	}
 }

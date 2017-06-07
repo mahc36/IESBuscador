@@ -20,9 +20,9 @@ public class IesBussiness implements IIesBussiness {
 	}
 
 	@Override
-	public List<IesDTO> getIes() {
+	public List<Filter> getIes() {
 		Connection con =null;
-		List<IesDTO> message= new ArrayList<>();
+		List<Filter> message= new ArrayList<>();
 		try{
 			con= datasource.getConnection();
 			message= iesdao.getIes(con);

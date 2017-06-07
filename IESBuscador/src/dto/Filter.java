@@ -1,23 +1,48 @@
 package dto;
 
 public class Filter {
-	private boolean publ;
-	private boolean priv;
+	private int id;
+	private String name;
+	private String slogan;
+	private String escudo;
+	private String caracter;
+	private boolean accreditation;
 	private String city;
-	private boolean acred;
-	private boolean noacred;
-
-	public boolean isPubl() {
-		return publ;
+	public int getId() {
+		return id;
 	}
-	public void setPubl(boolean publ) {
-		this.publ = publ;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public boolean isPriv() {
-		return priv;
+	public String getName() {
+		return name;
 	}
-	public void setPriv(boolean priv) {
-		this.priv = priv;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getSlogan() {
+		return slogan;
+	}
+	public void setSlogan(String slogan) {
+		this.slogan = slogan;
+	}
+	public String getEscudo() {
+		return escudo;
+	}
+	public void setEscudo(String escudo) {
+		this.escudo = escudo;
+	}
+	public String getCaracter() {
+		return caracter;
+	}
+	public void setCaracter(String caracter) {
+		this.caracter = caracter;
+	}
+	public boolean isAccreditation() {
+		return accreditation;
+	}
+	public void setAccreditation(boolean accreditation) {
+		this.accreditation = accreditation;
 	}
 	public String getCity() {
 		return city;
@@ -25,17 +50,4 @@ public class Filter {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public boolean isAcred() {
-		return acred;
-	}
-	public void setAcred(boolean acred) {
-		this.acred = acred;
-	}
-	public boolean isNoacred() {
-		return noacred;
-	}
-	public void setNoacred(boolean noacred) {
-		this.noacred = noacred;
-	}
-	
 }

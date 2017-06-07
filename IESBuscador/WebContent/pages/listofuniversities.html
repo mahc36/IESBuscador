@@ -74,7 +74,7 @@
 					<br>
 					<h4>Con sede en:</h4>
 					<form>
-						<select data-ng-model="city" class="form-control" id="sel1" data-ng-model="cityFilter" data-ng-true-value="''" data-ng-false-value="''">							
+						<select class="form-control" id="sel1" data-ng-model="cityFilter" data-ng-true-value="''" data-ng-false-value="''">							
 							<option value="">Seleccione...</option>
 							<option>Medellin</option>
 							<option>Rionegro</option>
@@ -107,12 +107,12 @@
 						</div>
 					</div>
 				</form>
-				<h5>Resultados para: {{answer}}</h5>
+				<h5>Resultados para: {{answer}}---{{cityFilter}}</h5>
 			</div>
-			<div data-ng-show="Ies.length != 0" data-ng-repeat="item in Ies " class="col-sm-12 col-md-4"
+			<div data-ng-show="Ies.length != 0" data-ng-repeat="item in Ies | filter:{caracter:caracterFilter} | filter:{accreditation:accreditationFilter} | filter:{city:cityFilter}" class="col-sm-12 col-md-4"
 				style="margin-top: 30px;">
 				<div  class="thumbnail">
-					<img style="height: 200px;" data-ng-src="{{item.escudo}}" alt="...">{{item.escudo}}
+					<img style="height: 200px;" data-ng-src="../img/{{item.escudo}}" alt="...">
 					<div  class="caption">
 						<h3 style="height: 70px">{{item.name}}</h3>
 						<p style="height: 40px">{{item.slogan}}</p>

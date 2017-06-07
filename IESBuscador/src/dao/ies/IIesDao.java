@@ -9,7 +9,7 @@ import dto.IesDTO;
 
 public interface IIesDao {
 
-	List<IesDTO> getIes(Connection con)throws Exception;
+	List<Filter> getIes(Connection con)throws Exception;
 
 	List<IesDTO> getIesbyFilter(Connection con, Filter filter)throws Exception;
 

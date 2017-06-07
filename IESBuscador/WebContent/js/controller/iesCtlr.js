@@ -1,12 +1,12 @@
 app.controller("iesCtlr",  ["$scope","$window", "iesService",function iesCtlr($scope,$window, iesService) {
-	$scope.Ies={};
+	$scope.Ies=[];
 	$scope.answer="";
 	$scope.iesid="";
 	$scope.getList = function(){				
 		iesService.getList().then(function (message) {	
 			$scope.answer="Todas las IES";
-			$scope.Ies=message.data;			
-        	if($scope.Ies === {}){
+			$scope.Ies=message.data;
+        	if($scope.Ies === []){
         		alert("No hay ninguna IES registrada");
         	}
         });

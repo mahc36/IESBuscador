@@ -2,7 +2,7 @@ package dto;
 
 public class ProgramDTO {
 	private int id;
-	private String name;
+	private String program_name;
 	private String academic_level;
 	private String modality;
 	private int credits;
@@ -15,11 +15,11 @@ public class ProgramDTO {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getProgram_name() {
+		return program_name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setProgram_name(String program_name) {
+		this.program_name = program_name;
 	}
 	public String getAcademic_level() {
 		return academic_level;

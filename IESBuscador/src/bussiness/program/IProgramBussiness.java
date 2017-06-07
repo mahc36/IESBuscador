@@ -1,5 +1,9 @@
 package bussiness.program;
 
-public interface IProgramBussiness {
+import java.util.List;
 
+import dto.ProgramsFilterDTO;
+
+public interface IProgramBussiness {
+	public List<ProgramsFilterDTO> filter();
 }

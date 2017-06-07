@@ -5,13 +5,16 @@
 <meta charset="UTF-8">
 <title>Detalles IES</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="../js/extensions/bootstrap.min.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="../js/extensions/jquery.min.js"></script>
-<script type="text/javascript" src="../js/extensions/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/extensions/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="../js/extensions/angular.min.js"></script>
+	<script type="text/javascript" src="../js/extensions/angular-route.js"></script>
+	<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="../js/app.js"></script>
+	<script type="text/javascript" src="../js/controller/iesCtlr.js"></script>
+	<script type="text/javascript" src="../js/service/iesService.js"></script>	
+	<link rel="stylesheet" type="text/css" href="../js/extensions/bootstrap.min.css">
 </head>
 
-<body>
+<body data-ng-app="app" data-ng-controller="iesCtlr" data-ng-init="getInfo()">
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -40,10 +43,12 @@
 
 	<div style="height: 500px; overflow: hidden;">
 		<img class="img-background"
-			src="http://orientacion.universia.net.co/imgs2011/imagenes/uco-2015_02_26_142624.jpg"
-			alt="eafit" /> <img class="image-profile img-thumbnail"
-			src="http://www.uco.edu.co/bienestar/PublishingImages/logo%20uco%20final.jpg"
+			src="../img/ucocampus.jpg"
+			alt="eafit" /> 
+		<img class="image-profile img-thumbnail"
+			src="../img/ucologo.jpg"
 			alt="eafit" />
+			
 	</div>
 	<br>
 	<br>
@@ -66,20 +71,13 @@
 	<br>
 	<div class="container">
 		<ul class="nav nav-pills" role="tablist">
-			<li class="active"><a href="#">Acerca de la IES</a></li>
-			<li><a href="#">Programas</a></li>
-			<li><a href="#">Servicios de apoyo</a></li>
-			<li><a href="#">Ubicación</a></li>
-			<li><a href="#">Solicitar información</a></li>
+			<li><a class="active">Acerca de la IES</a></li>
+			<li><a class="active">Programas</a></li>
+			<li><a class="active">Campus</a></li>						
 		</ul>
 	</div>
 	<div class="container">
-		<div class="jumbotron">
-			<p>A defect includes a tragedy without a washed assistant. The
-				toast swims opposite the delighted brass. The motor mends outside
-				the severe correspondence. A starved motive enters the sore mankind.
-				The gold foams. Should the eating sympathy fly under the matter?</p>
-		</div>
+		
 	</div>
 	<footer class="footer" style="background-color: #000000;">
 		<div class="container">

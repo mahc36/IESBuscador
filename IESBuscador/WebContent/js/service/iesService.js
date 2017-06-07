@@ -15,6 +15,14 @@ app.factory("iesService", function($q, $http) {
 			}).catch(function(data){
 				console.log(data);
 			});
+		},
+		getInfo:function(iesid){
+			return $http.get('http://localhost:8080/IESBuscador/rest/iesServices/getInfo/'+iesid).then(function(data){
+				var received=angular.fromJson(data);
+				return received;
+			}).catch(function(data){
+				console.log(data);
+			});
 		}
 	}
 });

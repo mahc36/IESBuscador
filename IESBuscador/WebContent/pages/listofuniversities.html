@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<script type="text/javascript" src="../js/extensions/angular.min.js"></script>
+	<script type="text/javascript" src="../js/extensions/angular-route.js"></script>
 	<script type="text/javascript" src="../js/app.js"></script>
 	<script type="text/javascript" src="../js/controller/iesCtlr.js"></script>
 	<script type="text/javascript" src="../js/service/iesService.js"></script>
@@ -116,8 +117,8 @@
 						<h3 style="height: 70px">{{item.name}}</h3>
 						<p style="height: 40px">{{item.slogan}}</p>
 						<p>
-							<label data-ng-model="id" hidden="true">{{item.id}}</label> <a
-								href="universitydetails.html" class="btn btn-primary"
+							<label data-ng-model="iesid" hidden="true">{{item.id}}</label> 
+							<a data-ng-click="visitSite(iesid)" class="btn btn-primary"
 								role="button">Visitar</a>
 						</p>
 					</div>

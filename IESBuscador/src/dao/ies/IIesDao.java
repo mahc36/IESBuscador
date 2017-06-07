@@ -1,6 +1,7 @@
 package dao.ies;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 import dto.Filter;
@@ -13,5 +14,7 @@ public interface IIesDao {
 	List<IesDTO> getIesbyFilter(Connection con, Filter filter)throws Exception;
 
 	List<IesDTO> findIES(Connection con, String name) throws Exception;
+
+	IesDTO getInfo(Connection con, int iesid) throws Exception;
 
 }

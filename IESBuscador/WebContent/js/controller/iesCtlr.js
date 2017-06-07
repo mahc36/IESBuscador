@@ -1,6 +1,7 @@
-app.controller("iesCtlr",  ["$scope",  "iesService", function iesCtlr($scope, iesService) {
+app.controller("iesCtlr",  ["$scope","$window", "iesService",function iesCtlr($scope,$window, iesService) {
 	$scope.Ies={};
 	$scope.answer="";
+	$scope.iesid="";
 	$scope.getList = function(){				
 		iesService.getList().then(function (message) {	
 			$scope.answer="Todas las IES";
@@ -24,5 +25,14 @@ app.controller("iesCtlr",  ["$scope",  "iesService", function iesCtlr($scope, ie
 				}
 			});
 		}
+	}
+	$scope.visitSite= function(iesid){		
+		$window.location.href = 'universitydetails.html';		
+	}
+	={};
+	$scope.getInfo=function(){
+		iesService.getInfo(iesid).then(function(message){
+			$scope.iesdata=message.data;
+		});
 	}
 }]);

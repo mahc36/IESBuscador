@@ -92,4 +92,25 @@ public class IesDao implements IIesDao {
 		}
 		return listOfIes;		
 	}
+	@Override
+	public IesDTO getInfo(Connection con,int iesid) throws Exception { 
+		PreparedStatement instruction=null;
+		ResultSet result=null;
+		String query;
+		IesDTO iesDTO= null;		
+		try{
+			query= IesSql.GET_IES_INFO;
+			instruction=con.prepareStatement(query);
+			int index = 1;
+			instruction.setInt(index++,iesid);
+			result=instruction.executeQuery();
+			while(result.next()){
+				iesDTO=new IesDTO();
+				setInfoIes(result, iesDTO);				
+			}
+		}finally{
+			PersistUtil.closeResources(instruction, result);
+		}
+		return iesDTO;
+	}
 }

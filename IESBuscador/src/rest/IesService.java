@@ -40,4 +40,12 @@ public class IesService {
 	public List<IesDTO> finIES(@PathParam("nameSearch") String nameSearch ){
 		return iesbussiness.findIES(nameSearch);
 	}
+	@GET
+	@Path("/getInfo/{iesid}")
+	@Consumes(MediaType.TEXT_PLAIN)
+	@Produces(MediaType.APPLICATION_JSON)
+	public IesDTO getInfo(@PathParam("iesid") String iesid ){
+		int iesId=Integer.parseInt(iesid);
+		return iesbussiness.getInfo(iesId);
+	}
 }

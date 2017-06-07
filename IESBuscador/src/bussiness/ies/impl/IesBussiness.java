@@ -64,4 +64,19 @@ public class IesBussiness implements IIesBussiness {
 		return message;
 	}
 
+	@Override
+	public IesDTO getInfo(int iesid) {
+		Connection con =null;
+		IesDTO message= new IesDTO();
+		try{
+			con= datasource.getConnection();
+			message= iesdao.getInfo(con,iesid);
+		}catch (Exception e){
+			System.out.println(e.toString());
+		}finally {
+			PersistUtil.closeConnection(con);
+		}
+		return message;		
+	}
+
 }

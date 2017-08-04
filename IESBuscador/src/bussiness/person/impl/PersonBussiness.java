@@ -1,9 +1,6 @@
 package bussiness.person.impl;
 import java.sql.Connection;
-import javax.servlet.jsp.tagext.TryCatchFinally;
-
 import javax.sql.DataSource;
-
 import bussiness.person.IPersonBussiness;
 import dao.person.IPersonDao;
 import dao.person.jdbc.PersonDao;

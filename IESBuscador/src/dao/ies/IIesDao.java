@@ -9,11 +9,9 @@ import dto.IesDTO;
 
 public interface IIesDao {
 
-	List<Filter> getIes(Connection con)throws Exception;
+	List<Filter> getIes(Connection con)throws Exception;	
 
-	List<IesDTO> getIesbyFilter(Connection con, Filter filter)throws Exception;
-
-	List<IesDTO> findIES(Connection con, String name) throws Exception;
+	List<Filter> findIES(Connection con, String name) throws Exception;
 
 	IesDTO getInfo(Connection con, int iesid) throws Exception;
 

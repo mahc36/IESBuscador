@@ -1,0 +1,54 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+.margenes {
+    margin-left: 40px;
+    margin-top: 50px;
+    margin-right: 40px;
+}
+
+.div-img {
+    position: absolute;
+    display: block;
+    margin-left: 0px;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+}
+
+.div-img.hidden {
+    overflow: hidden;
+}
+
+.div-img .img {
+    display: block;
+    width: 100%;
+    transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -webkit-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+}
+
+.div-img .text {
+    font-family: 'Open Sans';
+    z-index: -1;
+    bottom: 20px;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+}
+
+.text {
+    position: relative;
+}
+
+.div-img:hover .img {
+    transform: translate(0px, -100px);
+    -ms-transform: translate(0px, -100px);
+    -moz-transform: translate(0px, -100px);
+    -webkit-transform: translate(0px, -100px);
+    -o-transform: translate(0px, -100px);
+}

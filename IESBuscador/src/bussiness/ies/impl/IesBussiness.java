@@ -35,26 +35,11 @@ public class IesBussiness implements IIesBussiness {
 	}
 
 	@Override
-	public List<IesDTO> getIesbyFilter(Filter filter) {
+	public List<Filter> findIES(String name) {
 		Connection con =null;
-		List<IesDTO> message= new ArrayList<>();
+		List<Filter> message= new ArrayList<>();
 		try{
-			con= datasource.getConnection();
-			message= iesdao.getIesbyFilter(con,filter);
-		}catch (Exception e){
-			System.out.println(e.toString());
-		}finally {
-			PersistUtil.closeConnection(con);
-		}
-		return message;
-	}
-
-	@Override
-	public List<IesDTO> findIES(String name) {
-		Connection con =null;
-		List<IesDTO> message= new ArrayList<>();
-		try{
-			con= datasource.getConnection();
+			con= datasource.getConnection();			
 			message= iesdao.findIES(con,name);
 		}catch (Exception e){
 			System.out.println(e.toString());

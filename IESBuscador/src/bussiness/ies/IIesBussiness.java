@@ -9,9 +9,7 @@ public interface IIesBussiness {
 
 	List<Filter> getIes();
 
-	List<IesDTO> getIesbyFilter(Filter filter);
-
-	List<IesDTO> findIES(String name);
+	List<Filter> findIES(String name);
 
 	IesDTO getInfo(int iesid);
 

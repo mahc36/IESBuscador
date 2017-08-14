@@ -26,18 +26,10 @@ public class IesService {
 		return iesbussiness.getIes();
 	}
 	@GET
-	@Path("/getIESbyFilter")
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Produces(MediaType.APPLICATION_JSON)
-	public List<IesDTO> getIESbyFilter(Filter filt){		
-		System.out.println(filt.getCity());
-		return iesbussiness.getIesbyFilter(filt);		
-	}
-	@GET
 	@Path("/findIES/{nameSearch}")
 	@Consumes(MediaType.TEXT_PLAIN)
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<IesDTO> finIES(@PathParam("nameSearch") String nameSearch ){
+	public List<Filter> finIES(@PathParam("nameSearch") String nameSearch ){
 		return iesbussiness.findIES(nameSearch);
 	}
 	@GET
